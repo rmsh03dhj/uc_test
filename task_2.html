@@ -9,7 +9,7 @@
                 if (($(this).parent().parent().is("li"))) {
                     let parentData = $(this).parent().parent().find("a").data("format");
                     let childData = $(this).find("a").data("format");
-                    var appendText = "<i style=\"color: #000000\"> [format: " + parentData + ">" + childData + "]</i>";
+                    var appendText = "<i style=\"color: #000000\"> [format: " + parentData + " > " + childData + "]</i>";
                 }
                 else {
                     let childData = $(this).find("a").data("format");
