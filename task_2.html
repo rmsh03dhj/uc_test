@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        jQuery(function ($) {
+            $("li").each(function () {
+                if (($(this).parent().parent().is("li"))) {
+                    let parentData = $(this).parent().parent().find("a").data("format");
+                    let childData = $(this).find("a").data("format");
+                    var appendText = "<i style=\"color: #000000\"> [format: " + parentData + ">" + childData + "]</i>";
+                }
+                else {
+                    let childData = $(this).find("a").data("format");
+                    var appendText = "<i style=\"color: #000000\"> [format: " + childData + "]</i>";
+                }
+                $(this).children("a").css({ "text-decoration": "none", "color": "#488AF7" }).append(appendText);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#" data-format="a">List item one</a></li>
+        <li><a href="#" data-format="b">List item two with subitems</a>
+            <ul>
+                <li><a href="#" data-format="c">Subitem 1</a></li>
+                <li><a href="#" data-format="d">Subitem 2</a></li>
+            </ul>
+        </li>
+        <li><a href="#" data-format="e">Final list item</a></li>
+    </ul>
+</body>
+
+</html>
